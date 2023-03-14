@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+My Blog
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/post.css' %}">
+<link rel="stylesheet" href="{% static 'blog/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<section id="welcome">
+<header>
+    <img src="{% static 'blog/images/mit.jpg'%}" alt="Mit - The Author"/>
+    <h2>Mit's Blog</h2>
+</header>
+<p>Hi, I am Mit. I am a creative nerd.!! Will be taking over the world.</p>
+</section>
+<section id = "latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+        {% include "blog/includes/post.html" %}
+    </ul>
+</section>
+
+<section id = "about">
+    <h2>What I do</h2>
+    <p>I love programming, I want to explore everything to know what to kill next!!</p>
+    <p>My goals are inevitable.</p>
+</section>
+{% endblock %}

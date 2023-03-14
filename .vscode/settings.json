@@ -1,0 +1,42 @@
+{
+    "html.format.contentUnformatted": "",
+    "django.snippets.exclude": [
+
+        "cms",
+        "wagtail"
+    ],
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+        },
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "auto-close-tag.activationOnLanguage": [
+        
+        "HTML",
+        "HTML5",
+        "xml",
+        "php",
+        "blade",
+        "ejs",
+        "jinja",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "vue",
+        "liquid",
+        "erb",
+        "lang-cfml",
+        "cfml",
+        "HTML (EEx)",
+        "HTML (Eex)",
+        "plist"
+    ],
+    
+}

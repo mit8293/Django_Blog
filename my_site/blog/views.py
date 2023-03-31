@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-# from datetime import date
+from datetime import date
 from .models import Post
 # Views
 from django.views.generic import ListView, DetailView
@@ -29,7 +29,7 @@ class StartingPageView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        data = queryset[:3]
+        data = queryset[3:]
         return data
 
 

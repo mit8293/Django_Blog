@@ -26,7 +26,7 @@ class Author(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=150)
     excerpt = models.CharField(max_length=300)
-    image_name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="posts", null=True)
     date = models.DateField(auto_now=True)
     # by default db_index true
     slug = models.SlugField(unique=True, db_index=True)
@@ -34,3 +34,15 @@ class Post(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.SET_NULL, null=True, related_name='posts')
     tags = models.ManyToManyField(Tag)
+
+    def __str__(self):
+        return self.title
+
+
+class Comment(models.Model):
+    # label = User name by default but we want Your name
+    user_name = models.CharField(max_length=120)
+    user_emial = models.EmailField()
+    text = models.TextField(max_length=400)
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
